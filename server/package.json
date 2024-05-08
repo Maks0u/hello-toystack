@@ -1,0 +1,20 @@
+{
+  "name": "hello-toystack-server",
+  "version": "1.0.0",
+  "author": "Maks0u",
+  "license": "MIT",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js ${npm_package_config_port}",
+    "test": "echo \"GET http://localhost:${npm_package_config_port}/health\nHTTP 200\" | hurl --test"
+  },
+  "dependencies": {
+    "@koa/router": "^12.0.1",
+    "koa": "^2.15.3"
+  },
+  "config": {
+    "port": "3000"
+  }
+}

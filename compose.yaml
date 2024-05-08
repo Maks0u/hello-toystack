@@ -1,0 +1,15 @@
+services:
+  server:
+    build: ./server
+    healthcheck:
+      test: CMD ["npm", "test"]
+      interval: 1m30s
+      timeout: 30s
+      retries: 5
+      start_period: 30s
+  nginx:
+    build: ./nginx
+    ports:
+      - "80:80"
+    depends_on:
+      - server
